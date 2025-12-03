@@ -1,0 +1,80 @@
+body {
+header {
+height: 80vh;
+background: url('assets/header.jpg') center/cover no-repeat;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+header .overlay {
+background: rgba(0, 0, 0, 0.4);
+padding: 40px;
+border-radius: 16px;
+text-align: center;
+color: white;
+animation: fadeIn 1.5s ease;
+}
+
+
+.boarding-pass {
+margin-top: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+font-weight: 600;
+}
+
+
+.boarding-pass .line {
+background: white;
+height: 2px;
+width: 60px;
+}
+
+
+section {
+padding: 60px 20px;
+text-align: center;
+}
+
+
+h2 {
+color: #998251;
+margin-bottom: 10px;
+}
+
+
+.button {
+display: inline-block;
+padding: 12px 24px;
+background: #998251;
+color: white;
+text-decoration: none;
+border-radius: 8px;
+font-weight: 600;
+transition: 0.3s;
+}
+
+
+.button:hover {
+background: #644f31;
+}
+
+
+footer {
+text-align: center;
+padding: 40px;
+background: #998251;
+color: white;
+margin-top: 40px;
+}
+
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
