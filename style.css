@@ -1,80 +1,67 @@
 body {
-header {
-height: 80vh;
-background: url('assets/header.jpg') center/cover no-repeat;
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
+margin: 0;
+font-family: 'Inter', sans-serif;
+background-color: #faf9f6;
+color: #644f31;
 }
 
 
-header .overlay {
-background: rgba(0, 0, 0, 0.4);
-padding: 40px;
-border-radius: 16px;
+/* --- HERO / BOARDING PASS STYLE --- */
+header {
+height: 70vh;
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('YOUR_IMAGE_HERE.jpg') center/cover no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 text-align: center;
 color: white;
-animation: fadeIn 1.5s ease;
+position: relative;
 }
 
 
 .boarding-pass {
-margin-top: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
-font-weight: 600;
-}
-
-
-.boarding-pass .line {
-background: white;
-height: 2px;
-width: 60px;
-}
-
-
-section {
-padding: 60px 20px;
-text-align: center;
-}
-
-
-h2 {
-color: #998251;
-margin-bottom: 10px;
-}
-
-
-.button {
-display: inline-block;
-padding: 12px 24px;
-background: #998251;
-color: white;
-text-decoration: none;
-border-radius: 8px;
-font-weight: 600;
-transition: 0.3s;
-}
-
-
-.button:hover {
-background: #644f31;
-}
-
-
-footer {
-text-align: center;
-padding: 40px;
-background: #998251;
-color: white;
-margin-top: 40px;
+background: rgba(250, 249, 246, 0.95);
+color: #644f31;
+padding: 1.5rem 2rem;
+border-radius: 12px;
+border: 2px dashed #998251;
+text-transform: uppercase;
+letter-spacing: 2px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+animation: fadeIn 1.2s ease;
 }
 
 
 @keyframes fadeIn {
 from { opacity: 0; transform: translateY(20px); }
 to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- SECTIONS --- */
+section { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+h2 { color: #998251; }
+
+
+.box {
+background: white;
+border: 1px solid #99825144;
+border-radius: 10px;
+padding: 1.5rem;
+margin: 1.5rem 0;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+animation: fadeIn 1.3s ease;
+}
+
+
+.btn {
+display: inline-block;
+background: #998251;
+color: white;
+padding: 0.8rem 1.4rem;
+border-radius: 6px;
+text-decoration: none;
+font-weight: 600;
+transition: 0.2s;
 }
