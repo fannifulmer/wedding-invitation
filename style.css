@@ -9,18 +9,44 @@ color: #644f31;
 /* --- HERO / BOARDING PASS STYLE --- */
 header {
 height: 70vh;
-background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('YOUR_IMAGE_HERE.jpg') center/cover no-repeat;
+/* background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Assets/01.jpg') center/cover no-repeat; */
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-color: white;
+color: #faf9f6;
 position: relative;
+}
+
+header .overlay {
+/* background: rgba(0, 0, 0, 0.4); */
+padding: 40px;
+border-radius: 16px;
+text-align: center;
+color: wheat;
+animation: fadeIn 1.5s ease;
 }
 
 
 .boarding-pass {
+margin-top: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+font-weight: 600;
+}
+
+
+.boarding-pass .line {
+background: white;
+height: 2px;
+width: 60px;
+}
+
+
+/* .boarding-pass {
 background: rgba(250, 249, 246, 0.95);
 color: #644f31;
 padding: 1.5rem 2rem;
@@ -30,7 +56,7 @@ text-transform: uppercase;
 letter-spacing: 2px;
 box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 animation: fadeIn 1.2s ease;
-}
+} */
 
 
 @keyframes fadeIn {
@@ -58,10 +84,165 @@ animation: fadeIn 1.3s ease;
 .btn {
 display: inline-block;
 background: #998251;
-color: white;
+color: wheat;
 padding: 0.8rem 1.4rem;
 border-radius: 6px;
 text-decoration: none;
 font-weight: 600;
 transition: 0.2s;
+}
+
+/* Három kép egymás mellett keretben */
+header .bg-stack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* háttér a szöveg mögött */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* képek közti távolság */
+    opacity: 0.9;
+}
+
+header .bg-stack img {
+    width: 28%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    transform: rotate(-2deg);
+}
+
+/* középső kép egyenes */
+header .bg-stack img:nth-child(2) {
+    transform: rotate(0deg);
+}
+
+/* jobb oldali kép kis döntéssel */
+header .bg-stack img:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.intro-invite {
+    max-width: 1300px; 
+    margin: 3rem auto; 
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+/* .intro-invite h2 {
+    color: #998251;
+    font-size: 2rem;
+    margin-bottom: 15px;
+} */
+
+.intro-invite p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #644f31;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* .plane-decorations {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; 
+}
+
+.plane-decorations img {
+    position: absolute;
+    width: 55px;
+    opacity: 0.14; 
+    transform: rotate(-15deg);
+} */
+
+.plane-decorations {
+    /* position: fixed; */
+    inset: 0;             /* full viewport */
+    pointer-events: none; /* allows clicks on content */
+    z-index: 0;           /* behind all content */
+}
+
+.plane-decorations img {
+    position: absolute;
+    width: 100px;
+}
+
+/* Scattered positions for 3 planes */
+.plane-decorations img:nth-child(1) { top: 270%;  right: 12%; transform: rotate(-3deg); }
+.plane-decorations img:nth-child(2) { top: 85%; right: 8%; transform: rotate(-5deg); }
+.plane-decorations img:nth-child(3) { top: 180%; left: 12%; transform: rotate(-3deg); }
+
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+    }
+
+    header .bg-stack {
+        position: relative;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    header .bg-stack img {
+        height: -webkit-fill-available;
+    }
+
+    /* Boarding pass szöveg a képek ALÁ kerül */
+    header .overlay {
+        position: relative;
+        z-index: 2;
+        color: #998251;
+        margin-bottom: -30px;
+    }
+}
+
+footer {
+    background: var(--accent-1);
+    color: #644f31;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+}
+
+/* szöveg finom megjelenése */
+footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* mobilon picit kisebb padding */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 16px;
+        font-size: 15px;
+    }
+
+    footer::after {
+        font-size: 26px;
+        right: 12px;
+        bottom: 10px;
+    }
 }
